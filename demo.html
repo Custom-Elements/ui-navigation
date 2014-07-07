@@ -1,0 +1,69 @@
+<!doctype html>
+
+<html>
+  <head>
+    <title>ui-navigation</title>
+    <script src="http://localhost:35729/livereload.js"></script>
+    <script src="node_modules/polymer/platform.js"></script>
+    <link rel="stylesheet" href="node_modules/ui-styles/ui-styles.less">
+    <link rel="import" href="node_modules/polymer/polymer.html">
+    <link rel="import" href="src/ui-navigation.html">
+    <style>
+      body {
+        font-family: "Helvetica Neue", "Helvetica", Arial;
+      }
+      #holder {
+        position: relative;
+        width: 24em;
+        height: 32em;
+        margin-top: 10em;
+        margin-left: auto;
+        margin-right: auto;
+      }
+    </style>
+  </head>
+  <body unresolved>
+    <div id="holder">
+      <box full>
+        <ui-navigation>
+          <ui-view id="main">
+          <ul>
+            <li push-screen="#fruit"><h2>Fruit</h2></li>
+            <li push-screen="#vegetables"><h2>Vegetables</h2></li>
+            <li push-screen="#meats"><h2>Meats</h2></li>
+          </ul>
+          </ui-view>
+          <ui-view id="fruit">
+          <ul>
+            <li push-screen="#detail"><h2>Apple</h2></li>
+            <li push-screen="#detail"><h2>Pear</h2></li>
+            <li push-screen="#detail"><h2>Banana</h2></li>
+          </ul>
+          </ui-view>
+          <ui-view id="vegetables">
+          <ul>
+            <li push-screen="#detail"><h2>Carrot</h2></li>
+            <li push-screen="#detail"><h2>Tomato</h2></li>
+            <li push-screen="#detail"><h2>Kale</h2></li>
+          </ul>
+          </ui-view>
+          <ui-view id="meats">
+          <ul>
+            <li push-screen="#detail"><h2>Veal</h2></li>
+            <li push-screen="#detail"><h2>Salmon</h2></li>
+            <li push-screen="#detail"><h2>Duck</h2></li>
+          </ul>
+          </ui-view>
+          <ui-view id="detail">
+            <h2>Great Choice!<info>☻</info></h2>
+          </ui-view>
+        </ui-navigation>
+      </box>
+    </div>
+    <script>
+      document.addEventListener('polymer-ready', function() {
+        //poke your element here
+      })
+    </script>
+  </body>
+</html>
