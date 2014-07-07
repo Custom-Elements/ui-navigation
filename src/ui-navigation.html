@@ -1,8 +1,16 @@
 <link rel="import" href="../node_modules/ui-view/src/ui-view.html">
-<polymer-element name="ui-navigation" attributes="view views" on-click="{{navigate}}">
+<polymer-element name="ui-navigation" attributes="view views backView" on-click="{{navigate}}">
 <template>
   <link rel="stylesheet" type="text/css" href="./ui-navigation.less">
-  <content></content>
+  <nav>
+    <template if="{{backView}}">
+      <info><h6 back on-click="{{pop}}">{{backView.title}}</h6></info>
+    </template>
+    <h6>{{view.title}}</h6>
+  </nav>
+  <section id="view">
+    <content></content>
+  </section>
 </template>
 <script src="./ui-navigation.litcoffee"></script>
 </polymer-element>

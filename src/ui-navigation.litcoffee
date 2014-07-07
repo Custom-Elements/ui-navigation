@@ -18,23 +18,36 @@ This is a reference to the current view element.
 ###views
 This is an array that is the view stack.
 
+###backView
+This will be the view to go back on a pop.
+
 ##Methods
 ###push
-Push to a new view by specifying the id.
+Push to a new view by specifying the id. A current view goes
+to the history.
 
       push: (idOrElement) ->
         if @view
           @view.setAttribute 'history', ''
-          @views.push @view
+          @backView = @view
         if idOrElement.tagName?
           @view = idOrElement
         else
           @view = @querySelector idOrElement
+        @views.push @view
         @view.setAttribute 'current', ''
 
 ###pop
 Pop the current view and go back. This will not let you pop if there is
 nowhere else to go.
+
+      pop: ->
+        if @views.length > 1
+          @view.removeAttribute 'current'
+          @views.pop()
+          @view = @views[@views.length-1]
+          @backView = @views[@views.length-2]
+          @view.removeAttribute 'history'
 
 ##Event Handlers
 Navigation is a click handling that will look from the source element up
