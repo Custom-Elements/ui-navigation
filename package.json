@@ -2,7 +2,7 @@
   "name": "ui-navigation",
   "version": "0.0.0",
   "dependencies": {
-    "polymer-build": "",
+    "polymer-serve": "git://github.com/custom-elements/polymer-serve",
     "polymer": "git://github.com/custom-elements/polymer#master",
     "ui-view": "git://github.com/custom-elements/ui-view#master",
     "ui-styles": "git://github.com/custom-elements/ui-styles#master",
@@ -10,6 +10,6 @@
   },
   "license": "ISC",
   "scripts": {
-    "test": "polymer-build watch . src/ build/"
+    "test": "polymer-serve ."
   }
 }
