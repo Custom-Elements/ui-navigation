@@ -2,16 +2,6 @@
 <polymer-element name="ui-navigation" attributes="view views backView" on-click="{{navigate}}">
 <template>
   <link rel="stylesheet" type="text/css" href="./ui-navigation.less">
-  <nav>
-    <panel>
-      <background>
-        <template if="{{backView}}">
-          <info><h6 back on-click="{{pop}}">{{backView.title}}</h6></info>
-        </template>
-        <h6>{{view.title}}</h6>
-      </background>
-    </panel>
-  </nav>
   <section id="view">
     <content></content>
   </section>

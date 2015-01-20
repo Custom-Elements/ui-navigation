@@ -13,7 +13,8 @@
         font-family: "Helvetica Neue", "Helvetica", Arial;
       }
       #holder {
-        position: relative;
+        display: flex;
+        flex-direction: column;
         width: 24em;
         height: 32em;
         margin-top: 10em;
@@ -24,7 +25,8 @@
   </head>
   <body unresolved>
     <div id="holder">
-      <border full>
+      <div id="reset">Click to pop.</div>
+      <border>
         <ui-navigation>
           <ui-view id="main" title="Menu">
           <ul>
@@ -63,6 +65,9 @@
     <script>
       document.addEventListener('polymer-ready', function() {
         //poke your element here
+        document.querySelector('#reset').addEventListener('click', function(){
+          document.querySelector('ui-navigation').pop();
+        })
       })
     </script>
   </body>

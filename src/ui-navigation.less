@@ -3,42 +3,8 @@
 @import "../node_modules/ui-styles/typography";
 
 :host {
-  display: block;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
   overflow: hidden;
-  .fill;
-  nav {
-    .cannot-select-text;
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    align-items: center;
-    h6 {
-      display: block;
-      margin: 0;
-      line-height: 2em;
-      &[back] {
-        position: absolute;
-        top: 0;
-        left: 0;
-        bottom: 0;
-        margin: 0;
-        width: auto;
-        margin-left: 0.5em;
-        line-height: 2em;
-        .transform-origin(0 50%);
-        .transform(scale3d(.7, .7, 1));
-        &:before {
-          content: '\27e8';
-        }
-      }
-    }
-  }
-  #view {
-    position: absolute;
-    top: 3em;
-    left: 0;
-    right: 0;
-    bottom: 0;
-  }
 }
