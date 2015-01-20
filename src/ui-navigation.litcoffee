@@ -32,11 +32,11 @@ to the history.
           newView = @querySelector idOrElement
         if @view
           @views.push @view
-          @view.fadeOut =>
-            newView.fadeIn =>
+          @view.vanishLeft =>
+            newView.appearRight =>
               @view = newView
         else
-          newView.fadeIn =>
+          newView.appearLeft =>
             @view = newView
 
 ###pop
@@ -46,8 +46,8 @@ nowhere else to go.
       pop: ->
         if @views.length > 0
           newView = @views.pop()
-          @view.fadeOut =>
-            newView.fadeIn =>
+          @view.vanishRight =>
+            newView.appearLeft =>
               @view = newView
 
 ##Event Handlers
