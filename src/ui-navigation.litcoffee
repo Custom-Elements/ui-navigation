@@ -17,6 +17,9 @@ event handlers, this is all declarative.
 ###view
 This is a reference to the current view element.
 
+      viewChanged: ->
+       @view?.removeAttribute 'hidden'
+
 ###views
 This is an array that is the view stack.
 
